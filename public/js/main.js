@@ -1,5 +1,5 @@
 const script = document.createElement('script');
-script.src = 'https://simple-chat-app-dun.vercel.app/socket.io/socket.io.js'; // Replace with your backend's URL
+script.src = 'https://simple-chat-app-dun.vercel.app/'; // Replace with your backend's URL
 document.head.appendChild(script);
 let socket;
 script.onload = () => {
