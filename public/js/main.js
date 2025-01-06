@@ -1,9 +1,9 @@
 const script = document.createElement('script');
-script.src = 'https://simple-chat-app-dun.vercel.app/socket.io/socket.io.js'; // Replace with your backend's URL
-document.head.appendChild(script);
+script.src = 'http://localhost:3000/socket.io/socket.io.js'; // Replace with your backend's URL
+
 let socket;
 script.onload = () => {
-  socket = io('https://simple-chat-app-dun.vercel.app/'); 
+  socket = io('http://localhost:3000/'); 
   let chatMsgContainer = document.querySelector(".chat-messages");
 const chatForm = document.querySelector("#chat-form");
 let roomName = document.querySelector("#room-name");
@@ -66,8 +66,10 @@ function outputUsers(users) {
 }
 
 };
+script.onerror = () => {
+  console.error('Failed to load the Socket.IO script from the server.');
+};
 
-
-
+document.head.appendChild(script);
 
 // const socket = io('http://localhost:3000/socket.io/socket.io.js');
