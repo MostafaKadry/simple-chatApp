@@ -3,7 +3,7 @@ script.src = 'socket.io/socket.io.js'; // Replace with your backend's URL
 document.head.appendChild(script);
 let socket;
 script.onload = () => {
-  socket = io('http://localhost:3000/'); 
+  socket = io('https://realtime-chatapp.azurewebsites.net/'); 
   let chatMsgContainer = document.querySelector(".chat-messages");
 const chatForm = document.querySelector("#chat-form");
 let roomName = document.querySelector("#room-name");
